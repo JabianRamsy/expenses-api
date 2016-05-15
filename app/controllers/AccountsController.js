@@ -14,9 +14,10 @@ export class AccountsController extends BaseController{
 
 	getMovements(req, res){
 		Movement.query({
-			account: req.param.id
+			account: req.params.id
 		})
 		.then(result => res.json(result))
 		.catch(e => this.handleError(req, res,e));
 	}
+
 }
